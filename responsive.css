@@ -1,0 +1,54 @@
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8rem;
+        line-height: 1.2em;
+    
+        width: 70vw;
+    }
+
+    main section.image {
+        grid-template-columns: 1fr;
+    }
+
+    main section.desc {
+        font-size: 1.3rem;
+    }
+
+    .container-desc .desc {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 430px) {
+    header h1 {
+        font-size: 2.3rem;
+        line-height: 1.2em;
+    
+        width: 90vw;
+    }
+
+    header p {
+        display: none;
+    }
+
+    main section.desc {
+        font-size: 1rem;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+
+    footer ul {
+        justify-self: center;
+    }
+
+    .container-desc {
+        height: 80vh;
+    }
+
+    .container-desc .desc {
+        font-size: 2rem;
+    }
+}

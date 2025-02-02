@@ -1,0 +1,220 @@
+:root {
+    --grey-color: #7f7f7f;
+    --light-grey-color: #e8e5e480;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --border-radius-button: 100px;
+    --border-radius-image: 10px;
+    --transition-options: .3s ease-in-out;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    transition: 750ms; 
+}
+
+nav {
+    position: fixed;
+    
+    top: 30px;
+    transform: translateX(calc(50vw - 50%));
+    z-index: 100;
+
+    background-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    
+    background-color: var(--light-grey-color);
+    border-radius: var(--border-radius-button);
+    backdrop-filter: blur(5px);
+
+    padding: 1em .2em;
+}
+
+nav a {
+    color: black;
+    padding: .8em 1.7em;
+    border-radius: var(--border-radius-button);
+}
+
+nav a.active {
+    background-color: var(--white-color);
+}
+
+header {
+    margin: 150px 0; padding: 50px;
+
+    display: grid;
+    place-content: center;
+    place-items: center;
+
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3.8rem;
+    line-height: 1.2em;
+
+    width: 60vw;
+}
+
+header p {
+    margin-top: 70px;
+}
+
+header span {
+    margin: .3em;
+    padding: .7em;
+    border-radius: var(--border-radius-button);
+    background-color: var(--light-grey-color);
+}
+
+header span.active {
+    background-color: transparent;
+}
+
+main {
+    display: grid;
+    place-items: center;
+}
+
+main .image {
+    width: 90%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+}
+
+main .image .box {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: var(--border-radius-image);
+}
+
+main .image a {
+    color: black;
+}
+
+main .image img {
+    width: 100%; height: 100%;
+}
+
+main .image .filter {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    
+    transition: var(--transition-options);
+}
+
+main .image .filter:hover {
+    backdrop-filter: blur(8px) brightness(80%);
+}
+
+main .image .filter::before {
+    content: "Tittle";
+    font-size: 1.1rem;
+    color: var(--white-color);
+
+    position: absolute;
+    top: 0; left: 0;
+    transform: translate(20px, 20px);
+
+    transition: var(--transition-options);
+    opacity: 0;
+}
+
+main .image .filter:hover::before {
+    opacity: 1;
+}
+
+main .image .filter::after {
+    content: "";
+    
+    height: 50px; width: 50px;
+    background-color: var(--white-color);
+
+    background-image: url("https://cdn0.iconfinder.com/data/icons/jam-vol-1/24/chevron-circle-up-right-1024.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: var(--border-radius-button);
+
+    position: absolute;
+    top: 0; right: 0;
+    transform: translate(-50px, 50px);
+
+    transition: var(--transition-options);
+    opacity: 0;
+}
+
+main .image .filter:hover::after {
+    transform: translate(-30px, 30px);
+    opacity: 1;
+}
+
+main .desc {
+    margin: 150px 0;
+    text-align: center;
+    
+    font-size: 1.5rem;
+}
+
+main .desc span{
+    display: block;
+    color: var(--grey-color);
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+
+    padding: 2em 1.5em;
+    font-size: .9rem;
+}
+
+footer ul {
+    display: flex;
+    justify-self: end;
+}
+
+footer li {
+    padding: .5em;
+}
+
+footer a {
+    color: var(--black-color);
+}
+
+footer a:hover {
+    color: var(--grey-color);
+}
+
+.container-desc {
+    position: relative;
+    height: 87vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-desc .desc {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container-desc .desc span{
+    display: block;
+    color: var(--grey-color);
+}
